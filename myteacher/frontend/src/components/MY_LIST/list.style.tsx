@@ -1,7 +1,19 @@
 import { styled } from '@mui/material';
 
 export const ListStyled = styled('ul')`
-    
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: ${({theme}) => theme.spacing(10, 2, 10, 2)};
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: ${({theme}) => theme.spacing(9)};
+
+    ${({ theme }) => theme.breakpoints.down('md')} {
+        grid-template-columns: 1fr;
+        gap: ${({theme}) => theme.spacing(8)};
+    }
 `;
 
 export const ListItems = styled('li')`
@@ -28,5 +40,5 @@ export const Value = styled('p')`
 `;
 
 export const Description = styled('p')`
-    
+    word-break: break-word;
 `;
